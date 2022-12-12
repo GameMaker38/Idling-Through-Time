@@ -1,0 +1,15 @@
+html {
+    font-family: 'IBM Plex Mono', monospace;
+}
+button {
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: #c8c8c8;
+    transition-duration: 0.4s;
+    font-family: 'IBM Plex Mono', monospace;
+}
+button:hover {
+    background-color: #b8b8b8;
+    cursor: pointer;
+}
