@@ -93,12 +93,12 @@ function incrementGluons(IncreaseNum) {
 
 function buyUpgrade(upgradeID) {
     if (upgradeID = 'timeDilation' && quarks >= 50) {
-        var quarks = quarks - 50;
+        quarks -=50;
         displayElementAsVariable('quarkcounter', quarks);
         console.log(`Upgrade Bought.`);
         alert(`Upgrade bought.`);
         increaseTimeMult(quarks/10);
-    } 
+    }
 }
 
 // mult functions
@@ -155,5 +155,6 @@ function quarkChanceResult() {
         alert(`Your quarks annihilated eachother!`)
     }
 }
+
 
 >>>>>>> 0152e3624b6700755296e7f5a11d5f60112bb15a
