@@ -9,14 +9,26 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h2>Time:</h2>
-        <h2 id="timecounter">0</h2>
-        <br>
-        <h2>Quarks:</h2>
-        <h2 id="quarkcounter">0</h2>
+        <div>
+            <h2>Time:</h2>
+            <h2 id="timecounter">0</h2>
+            <h2>Photons:</h2>
+            <h2 id="photoncounter">0</h2>
+            <h2>Gluons</h2>
+            <h2 id="gluoncounter">0</h2>
+        </div>
+        <div>
+            <h2>Quarks:</h2>
+            <h2 id="quarkcounter">0</h2>
+            <h2>Antiquarks:</h2>
+            <h2 id="antiquarkcounter">0</h2>
+        </div>
         <button class="button" onclick="incrementTime(1)">Wait</button>
         <button class="button" onclick="incrementTime(5)">Wait More</button>
         <button class="button" onclick="incrementQuarks(1)">Condense A Quark </button>
+        <button class="button" onclick="incrementAntiQuarks(1)"> Condense An Antiquark</button>
         <button class="button" onclick="playWithQuarks()"> Play With Your Quarks </button>
+        <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
+        <button class="button" onclick="buyUpgrade('timeDilation')"> Buy Upgrade: Time Dilation </button>
     </body>
 </html>
