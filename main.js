@@ -1,35 +1,26 @@
-<<<<<<< HEAD
-
 //huge thanks to StellarX20 for helping with code!
+
+
 
 // variables
 
-let timeToQuarkMultiplier = 10
 let time = 0
 let quarks = 0
-let quarkReq = 25
-let antiquarks = 0
-let photons = 0
 let gluons = 0
-let photonToGluonReq = 10
+let photons = 0
+let protons = 0
+let electrons = 0
+
 let quarkMult = 1
 let timeMult = 1
 let photonMult = 1
 let gluonMult = 1
 
-//other functions
+//display html element as variable or string
 
 function displayElementAsVariable(elementId, displayVariable) {
-    var elementVariable = document.getElementById(elementId)
+    var elementVariable = document.getElementById(elementId);
     elementVariable.innerHTML = displayVariable
-}
-function quarkToTimeDynamicReq() {
-    if (photons/3 < timeToQuarkMultiplier) {
-        return timeToQuarkMultiplier - Math.floor(photons/3)
-    }
-    else {
-        return 1
-    }
 }
 
 //increment functions
@@ -40,53 +31,32 @@ function incrementTime(IncreaseNum) {
     displayElementAsVariable("timecounter", time);
 }
 function incrementQuarks(IncreaseNum) {
-    if (time >= quarkToTimeDynamicReq()) {
-        var quarkElement = document.getElementById("quarkcounter");
+    if (photons >= IncreaseNum) {
         quarks += IncreaseNum * quarkMult;
-        time = time - (IncreaseNum*timeToQuarkMultiplier);
-        displayElementAsVariable("timecounter", time);
-        console.log('Time: ', time);
-        console.log('Quarks: ', quarks);
-        quarkElement.innerHTML = quarks;
-    }
-    else {
-        alert(`Not enough time.`);
+        photons -= IncreaseNum;
+        displayElementAsVariable('quarkcounter', quarks);
     }
 }
-
-function incrementAntiQuarks(IncreaseNum) {
-    if (time >= quarkToTimeDynamicReq()) {
-        var antiQuarkElement = document.getElementById("antiquarkcounter");
-        antiquarks += IncreaseNum * quarkMult;
-        time = time-(IncreaseNum*quarkToTimeDynamicReq());
-        displayElementAsVariable("timecounter", time);
-        console.log('Time: ', time);
-        console.log('Antiquarks: ', antiquarks);
-        antiQuarkElement.innerHTML = antiquarks;
-    }
-    else {
-        alert(`Not enough time.`)
-    }
-}
-
 function incrementPhotons(IncreaseNum) {
     photons += IncreaseNum * photonMult;
-    console.log('Photons: ', photons)
-    displayElementAsVariable('photoncounter', photons)
+    displayElementAsVariable('photoncounter', photons);
 }
 
 function incrementGluons(IncreaseNum) {
-    if (photons >= photonToGluonReq) {
-        gluons += IncreaseNum * gluonMult;
-        photons -= (IncreaseNum*photonToGluonReq)
-        console.log('Gluons: ', gluons)
-        console.log('Photons: ', photons)
-        displayElementAsVariable('photoncounter', photons)
-        displayElementAsVariable('gluoncounter', gluons)
-    }
-    else {
-        alert(`Not enough photons.`)
-    }
+    gluons += IncreaseNum * gluonMult;
+    displayElementAsVariable('gluoncounter', gluons);
+}
+
+function incrementElectrons(IncreaseNum) {
+    electrons += IncreaseNum;
+    displayElementAsVariable('electroncounter', electrons);
+}
+
+function incrementProtons(IncreaseNum) {
+    photons += IncreaseNum;
+    gluons -= IncreaseNum * 3;
+    quarks -= IncreaseNum * 3;
+    displayElementAsVariable('gluoncounter', gluons);
 }
 
 //upgrade functions
@@ -95,13 +65,24 @@ function buyUpgrade(upgradeID) {
     if (upgradeID = 'timeDilation' && quarks >= 50) {
         quarks -=50;
         displayElementAsVariable('quarkcounter', quarks);
-        console.log(`Upgrade Bought.`);
-        alert(`Upgrade bought.`);
-        increaseTimeMult(quarks/10);
+        increaseTimeMult(.1);
+        displayElementAsVariable('log', "Somehow, after colliding a few dozen quarks, time now runs 10% faster.")
+    }
+
+    if (upgradeID = 'electroMagnetism' && electrons >= 5 && protons >= 5) {
+        electrons -=5;
+        protons -=5;
+        displayElementAsVariable('log', "Particles now repel and attract. Maybe you can combine larger things with this?");
+    }
+
+    if (upgradeID = 'quarkMultiplication' && quarks >= 50) {
+        quarks -=50;
+        quarkMult += 1
+        displayElementAsVariable('log', "After studying how quarks work (didn't you create them?), you can turn photons into pairs of quarks.");
     }
 }
 
-// mult functions
+// multiplier functions
 
 function increaseTimeMult(mult) {
     timeMult += mult;
@@ -118,43 +99,3 @@ function increasePhotonMult(mult) {
 function increaseGluonMult(mult) {
     gluonMult += mult
 }    
-
-//playing with quarks
-
-function playWithQuarks() {
-    if (quarks + antiquarks >= quarkReq) {
-        incrementTime(10);
-        if (Math.random() < 0.1) {
-            quarkChanceResult()
-        }
-        ++quarkReq
-    }
-    else {
-      if (quarks > 0) {
-        alert(`The quarks bore you.`);
-        incrementTime(1);
-      }
-      else {
-        alert(`You don't have any quarks.`);
-      }
-    }
-}
-function quarkChanceResult() {
-    if (Math.random() < 0.9) { 
-        if (Math.random() < 0.5) {
-            incrementQuarks(-1)
-        }
-        else {
-            incrementAntiQuarks(-1)
-        }
-    }
-    else if (quarks > 0 & antiquarks > 0) {
-        incrementQuarks(-1)
-        incrementAntiQuarks(-1)
-        incrementPhotons(1)
-        alert(`Your quarks annihilated eachother!`)
-    }
-}
-
-
->>>>>>> 0152e3624b6700755296e7f5a11d5f60112bb15a

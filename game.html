@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ITT</title>
+        <title>Idling Through Time</title>
         <link href="styles.css" rel="stylesheet">
         <script src="main.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,25 +10,36 @@
     </head>
     <body>
         <div>
+            <h2 id="log">Recent events will show up here. </h2>
+            <p href="credits.html">Credits</p><p href="gameroadmap.html">Roadmap</p><p>Version 0.01</p>
+        </div>
+        <div>
             <h2>Time:</h2>
             <h2 id="timecounter">0</h2>
             <h2>Photons:</h2>
             <h2 id="photoncounter">0</h2>
             <h2>Gluons</h2>
             <h2 id="gluoncounter">0</h2>
-        </div>
-        <div>
             <h2>Quarks:</h2>
             <h2 id="quarkcounter">0</h2>
-            <h2>Antiquarks:</h2>
-            <h2 id="antiquarkcounter">0</h2>
+            <h2>Electrons:</h2>
+            <h2 id="electroncounter">0</h2>
+            <h2>Protons:</h2>
+            <h2 id="protoncounter">0</h2>
         </div>
-        <button class="button" onclick="incrementTime(1)">Wait</button>
-        <button class="button" onclick="incrementTime(5)">Wait More</button>
-        <button class="button" onclick="incrementQuarks(1)">Condense A Quark </button>
-        <button class="button" onclick="incrementAntiQuarks(1)"> Condense An Antiquark</button>
-        <button class="button" onclick="playWithQuarks()"> Play With Your Quarks </button>
-        <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
-        <button class="button" onclick="buyUpgrade('timeDilation')"> Buy Upgrade: Time Dilation </button>
-    </body>
+        <div>
+            <button class="button" onclick="incrementTime(1)">Wait</button>
+            <button class="button" onclick="incrementTime(5)">Wait More</button>
+            <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
+            <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
+            <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
+            <button class="button" onclick="incrementProtons(1)">Fuse a Proton</button>
+        </div>
+        <div id="upgrades">
+            <h2>Upgrades</h2>
+            <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:darkslategray">How do you even upgrade a universe?</p>
+            <button class="button" onclick="buyUpgrade('timeDilation')">Upgrade: Time Dilation </button>
+            <button class="button" onclick="buyUpgrade('electroMagnetism')">Upgrade: Electromagnetism</button>
+        </div>
+        </body>
 </html>

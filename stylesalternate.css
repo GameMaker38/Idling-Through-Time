@@ -5,17 +5,17 @@ button {
     font-family: 'IBM Plex Mono', monospace;
 }
 a {
-    color: darkblue;
+    color: rgb(60, 60, 224);
     cursor: grab;
 }
 button {
     padding: 5px;
     border: none;
     border-radius: 2px;
-    background-color: #c8c8c8;
+    background-color: lightslategray;
     transition-duration: 0.4s;
 }
 button:hover {
-    background-color: #b8b8b8;
+    background-color: rgb(97, 110, 123);
     cursor: pointer;
 }
