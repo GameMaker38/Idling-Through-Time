@@ -9,9 +9,9 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div>
+        <div class="log">
             <h2 id="log">Recent events will show up here. </h2>
-            <p href="credits.html">Credits</p><p href="gameroadmap.html">Roadmap</p><p>Version 0.01</p>
+            <a href="credits.html">Credits</a><a href="gameroadmap.html">Roadmap</a><p>Version 0.01</p>
         </div>
         <div>
             <h2>Time:</h2>
@@ -28,18 +28,41 @@
             <h2 id="protoncounter">0</h2>
         </div>
         <div>
-            <button class="button" onclick="incrementTime(1)">Wait</button>
-            <button class="button" onclick="incrementTime(5)">Wait More</button>
-            <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
-            <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
-            <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
-            <button class="button" onclick="incrementProtons(1)">Fuse a Proton</button>
-        </div>
+            <nobr>
+                <button class="button" onclick="incrementTime(1)">Wait</button>
+                <p><i>Wait enough, and you'll get something in return! *Disclaimer: You may or may not get anything in return.*</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementTime(5)">Wait More</button>
+                <p><i>Like waiting, but longer.</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementPhotons(1)">Light a Photon</button>
+                <p><i>Light a photon into existence.</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
+                <p><i>Photons: Instant Quarks - Just add Energy!</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
+                <p><i>Condense a gluon out of sheer will.</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
+                <p><i>Turn nothing into yet another thing.</i></p>
+            </nobr>
+            <nobr>
+                <button class="button" onclick="incrementProtons(1)">Fuse a Proton</button>
+                <p><i>Combine 3 quarks, 3 gluons, and a bit of love, and now you have the subatomic stew of a proton!</i></p>
+            </nobr>
+            </div>
         <div id="upgrades">
             <h2>Upgrades</h2>
             <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:darkslategray">How do you even upgrade a universe?</p>
-            <button class="button" onclick="buyUpgrade('timeDilation')">Upgrade: Time Dilation </button>
-            <button class="button" onclick="buyUpgrade('electroMagnetism')">Upgrade: Electromagnetism</button>
+            <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation')">Upgrade: Time Dilation </button>
+            <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism')">Upgrade: Electromagnetism</button>
         </div>
         </body>
 </html>
+h2
