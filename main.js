@@ -23,6 +23,24 @@ function displayElementAsVariable(elementId, displayVariable) {
     elementVariable.innerHTML = displayVariable
 }
 
+//hide html element
+
+function hide(elementId) {
+      elementId.style.display = "none";
+  }
+
+//show html element
+
+function show(elementId) {
+      elementId.style.display = "block";
+  }
+
+//show string on log element
+
+function log(string) {
+    displayElementAsVariable("log", string);
+}
+
 //increment functions
 
 function incrementTime(IncreaseNum) {
@@ -34,7 +52,11 @@ function incrementQuarks(IncreaseNum) {
     if (photons >= IncreaseNum) {
         quarks += IncreaseNum * quarkMult;
         photons -= IncreaseNum;
+        displayElementAsVariable('photoncounter', photons);
         displayElementAsVariable('quarkcounter', quarks);
+    }
+    else {
+        console.log("Not enough resources to increment quarks.")
     }
 }
 function incrementPhotons(IncreaseNum) {
@@ -53,32 +75,39 @@ function incrementElectrons(IncreaseNum) {
 }
 
 function incrementProtons(IncreaseNum) {
+    if (gluons >= 3 &&  quarks >= 3) {
     photons += IncreaseNum;
     gluons -= IncreaseNum * 3;
     quarks -= IncreaseNum * 3;
     displayElementAsVariable('gluoncounter', gluons);
+    displayElementAsVariable('quarkcounter', quarks);
+    displayElementAsVariable('protoncounter', protons);
+    }
+    else {
+        console.log("Not enough resources to increment protons.");
+    }
 }
 
 //upgrade functions
 
 function buyUpgrade(upgradeID) {
-    if (upgradeID = 'timeDilation' && quarks >= 50) {
-        quarks -=50;
+    if (upgradeID = 'timeDilation' && quarks >= 25) {
+        quarks -=25;
         displayElementAsVariable('quarkcounter', quarks);
         increaseTimeMult(.1);
-        displayElementAsVariable('log', "Somehow, after colliding a few dozen quarks, time now runs 10% faster.")
+        log("Somehow, after colliding a few dozen quarks, time now runs 10% faster.")
     }
 
     if (upgradeID = 'electroMagnetism' && electrons >= 5 && protons >= 5) {
         electrons -=5;
         protons -=5;
-        displayElementAsVariable('log', "Particles now repel and attract. Maybe you can combine larger things with this?");
+        log("Particles now repel and attract. Maybe you can combine larger things with this?");
     }
 
     if (upgradeID = 'quarkMultiplication' && quarks >= 50) {
         quarks -=50;
         quarkMult += 1
-        displayElementAsVariable('log', "After studying how quarks work (didn't you create them?), you can turn photons into pairs of quarks.");
+        log("After studying how quarks work (didn't you create them?), you can now turn photons into pairs of quarks.");
     }
 }
 

@@ -1,17 +1,21 @@
 html {
     font-family: 'IBM Plex Mono', monospace;
 }
+
 body {
     background-color:rgb(66, 65, 77);
     color:aliceblue
 }
+
 button {
     font-family: 'IBM Plex Mono', monospace;
 }
+
 a {
     color: rgb(60, 60, 224);
     cursor: grab;
 }
+
 button {
     padding: 5px;
     border: none;
@@ -21,16 +25,52 @@ button {
     text-align: center;
     border-radius: 5px;
 }
+
 button:hover {
     background-color: rgb(97, 110, 123);
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-#log{
-    background-color:rgb(97, 110, 123);
-    color:rgb(161, 169, 176)
-}
 
 .log{
-    background-color:rgb(95, 94, 110)
+    background-color:rgb(97, 110, 123);
+    color:rgb(161, 169, 176);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+#log{
+    background-color:rgb(95, 94, 110);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+span {
+    white-space: nowrap;
+}
+
+i {
+    color:rgb(114, 119, 123);
+}
+
+.ib {
+    display: inline-block;
+}
+
+#resources {
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: rgb(95, 94, 110)
+}
+
+.resource {
+    margin-right: 50px;
+}
+
+.spaced {
+    margin-left: 40px;
+    margin-right: 40px;
 }

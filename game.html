@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYpE html>
 <html>
     <head>
         <title>Idling Through Time</title>
@@ -6,63 +6,61 @@
         <script src="main.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+plex+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="log">
             <h2 id="log">Recent events will show up here. </h2>
-            <a href="credits.html">Credits</a><a href="gameroadmap.html">Roadmap</a><p>Version 0.01</p>
+            <div style="text-align: center;">
+                <a class="ib spaced" href="credits.html">Credits</a>
+                <a class="ib spaced" href="gameroadmap.html">Roadmap</a>
+                <p class="ib spaced">Version 0.02</p>
+            </div>
+        </div>
+        <div id="resources">
+            <h2 class="ib">Time:</h2>
+            <h2 class="ib resource" id="timecounter">0</h2>
+            <h2 class="ib">Photons:</h2>
+            <h2 class="ib resource" id="photoncounter">0</h2>
+            <h2 class="ib">Gluons:</h2>
+            <h2 class="ib resource" id="gluoncounter">0</h2>
+            <h2 class="ib">Quarks:</h2>
+            <h2 class="ib resource" id="quarkcounter">0</h2>
+            <h2 class="ib">Electrons:</h2>
+            <h2 class="ib resource" id="electroncounter">0</h2>
+            <h2 class="ib">Protons:</h2>
+            <h2 class="ib resource" id="protoncounter">0</h2>
         </div>
         <div>
-            <h2>Time:</h2>
-            <h2 id="timecounter">0</h2>
-            <h2>Photons:</h2>
-            <h2 id="photoncounter">0</h2>
-            <h2>Gluons</h2>
-            <h2 id="gluoncounter">0</h2>
-            <h2>Quarks:</h2>
-            <h2 id="quarkcounter">0</h2>
-            <h2>Electrons:</h2>
-            <h2 id="electroncounter">0</h2>
-            <h2>Protons:</h2>
-            <h2 id="protoncounter">0</h2>
-        </div>
-        <div>
-            <nobr>
-                <button class="button" onclick="incrementTime(1)">Wait</button>
-                <p><i>Wait enough, and you'll get something in return! *Disclaimer: You may or may not get anything in return.*</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementTime(5)">Wait More</button>
-                <p><i>Like waiting, but longer.</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementPhotons(1)">Light a Photon</button>
-                <p><i>Light a photon into existence.</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
-                <p><i>Photons: Instant Quarks - Just add Energy!</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
-                <p><i>Condense a gluon out of sheer will.</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
-                <p><i>Turn nothing into yet another thing.</i></p>
-            </nobr>
-            <nobr>
-                <button class="button" onclick="incrementProtons(1)">Fuse a Proton</button>
-                <p><i>Combine 3 quarks, 3 gluons, and a bit of love, and now you have the subatomic stew of a proton!</i></p>
-            </nobr>
+            <button class="button" onclick="incrementTime(1)">Wait</button>
+            <p class="ib"><i>Wait enough, and you'll get something in return! *Disclaimer: You may or may not get anything in return.*</i></p>
+            <br>
+            <button class="button" onclick="incrementTime(5)">Wait More</button>
+            <p class="ib"><i>Like waiting, but longer.</i></p>
+            <br>
+            <button class="button" onclick="incrementPhotons(1)">Light a Photon</button>
+            <p class="ib"><i>Light a photon into existence.</i></p>
+            <br>
+            <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
+            <p class="ib"><i>Photons: Instant Quarks - Just add Energy!</i></p>
+            <br>
+            <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
+            <p class="ib"><i>Condense a gluon out of sheer will.</i></p>
+            <br>
+            <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
+            <p class="ib"><i>Turn nothing into yet another thing.</i></p>
+            <br>
+            <button class="button" onclick="incrementProtons(1)">Fuse a proton</button>
+            <p class="ib"><i>Combine 3 quarks, 3 gluons, and a bit of love, and now you have the subatomic stew of a proton!</i></p>
+            <br>
             </div>
         <div id="upgrades">
             <h2>Upgrades</h2>
-            <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:darkslategray">How do you even upgrade a universe?</p>
+            <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:rgb(97, 101, 105);">How do you even upgrade a universe?</p>
             <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation')">Upgrade: Time Dilation </button>
+            <p><i>Time goes 10% faster, somehow. Costs 25 quarks.</i></p>
             <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism')">Upgrade: Electromagnetism</button>
+            <p><i>Unlock atoms. Costs 5 electrons and 5 protons.</i></p>
         </div>
         </body>
 </html>
-h2
