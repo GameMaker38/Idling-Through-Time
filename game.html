@@ -14,7 +14,7 @@
             <div style="text-align: center;">
                 <a class="ib spaced" href="credits.html">Credits</a>
                 <a class="ib spaced" href="gameroadmap.html">Roadmap</a>
-                <p class="ib spaced">Version 0.02</p>
+                <p class="ib spaced">Version 0.021 - Nothing Works Edition</p>
             </div>
         </div>
         <div id="resources">
@@ -57,10 +57,17 @@
         <div id="upgrades">
             <h2>Upgrades</h2>
             <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:rgb(97, 101, 105);">How do you even upgrade a universe?</p>
-            <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation')">Upgrade: Time Dilation </button>
+            <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation');hide();">Upgrade: Time Dilation </button>
             <p><i>Time goes 10% faster, somehow. Costs 25 quarks.</i></p>
-            <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism')">Upgrade: Electromagnetism</button>
+            <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism');hide;">Upgrade: Electromagnetism</button>
             <p><i>Unlock atoms. Costs 5 electrons and 5 protons.</i></p>
+        </div>
+        <div>
+            <h3>Temporary Settings Section</h3>
+            <h4 class="ib">Cheat Mode & Hard Mode</h4><p class="ib">0 = Cheats, 1 = Normal, 2 = Hard Mode, Temporary</p>
+            <button onclick="difficulty(0);">0 (Cheats)</button>
+            <button onclick="difficulty(1);">1 (Normal)</button>
+            <button onclick="difficulty(2);">2 (Hard)</button>
         </div>
         </body>
 </html>

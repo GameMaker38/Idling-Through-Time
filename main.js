@@ -4,17 +4,19 @@
 
 // variables
 
-let time = 0
-let quarks = 0
-let gluons = 0
-let photons = 0
-let protons = 0
-let electrons = 0
+let time = 0;
+let quarks = 0;
+let gluons = 0;
+let photons = 0;
+let protons = 0;
+let electrons = 0;
 
-let quarkMult = 1
-let timeMult = 1
-let photonMult = 1
-let gluonMult = 1
+let quarkMult = 1;
+let timeMult = 1;
+let photonMult = 1;
+let gluonMult = 1;
+
+let difficulty = 1;
 
 //display html element as variable or string
 
@@ -41,6 +43,18 @@ function log(string) {
     displayElementAsVariable("log", string);
 }
 
+//increase mult variable
+
+function increaseMult(mult, increaseAmount) {
+    mult += increaseAmount;
+}
+
+//change difficulty
+
+function difficulty(dif) {
+    var difficulty = dif;
+}
+
 //increment functions
 
 function incrementTime(IncreaseNum) {
@@ -49,9 +63,9 @@ function incrementTime(IncreaseNum) {
     displayElementAsVariable("timecounter", time);
 }
 function incrementQuarks(IncreaseNum) {
-    if (photons >= IncreaseNum) {
-        quarks += IncreaseNum * quarkMult;
-        photons -= IncreaseNum;
+    if (photons >= (IncreaseNum * difficulty)) {
+        quarks += (IncreaseNum * quarkMult);
+        photons -= (IncreaseNum * difficulty);
         displayElementAsVariable('photoncounter', photons);
         displayElementAsVariable('quarkcounter', quarks);
     }
@@ -75,10 +89,10 @@ function incrementElectrons(IncreaseNum) {
 }
 
 function incrementProtons(IncreaseNum) {
-    if (gluons >= 3 &&  quarks >= 3) {
+    if (gluons >= (3 * difficulty) &&  quarks >= (3 * difficulty)) {
     photons += IncreaseNum;
-    gluons -= IncreaseNum * 3;
-    quarks -= IncreaseNum * 3;
+    gluons -= (IncreaseNum * 3 * difficulty);
+    quarks -= (IncreaseNum * 3 * difficulty);
     displayElementAsVariable('gluoncounter', gluons);
     displayElementAsVariable('quarkcounter', quarks);
     displayElementAsVariable('protoncounter', protons);
@@ -88,43 +102,31 @@ function incrementProtons(IncreaseNum) {
     }
 }
 
-//upgrade functions
+//upgrade functions mult
 
 function buyUpgrade(upgradeID) {
-    if (upgradeID = 'timeDilation' && quarks >= 25) {
-        quarks -=25;
+    if (upgradeID = 'timeDilation' && quarks >= (25 * difficulty)) {
+        quarks -= (25 * difficulty);
         displayElementAsVariable('quarkcounter', quarks);
-        increaseTimeMult(.1);
+        increaseMult(timeMult, .1)
         log("Somehow, after colliding a few dozen quarks, time now runs 10% faster.")
     }
 
-    if (upgradeID = 'electroMagnetism' && electrons >= 5 && protons >= 5) {
-        electrons -=5;
-        protons -=5;
+    if (upgradeID = 'electroMagnetism' && electrons >= (5 * difficulty) && protons >= (5 * difficulty)) {
+        electrons -= (5 * difficulty);
+        protons -= (5 * difficulty);
         log("Particles now repel and attract. Maybe you can combine larger things with this?");
     }
 
     if (upgradeID = 'quarkMultiplication' && quarks >= 50) {
-        quarks -=50;
-        quarkMult += 1
+        quarks -= (50 * difficulty);
+        increaseMult(quarkMult, 1);
         log("After studying how quarks work (didn't you create them?), you can now turn photons into pairs of quarks.");
     }
+
+    if (upgradeID = 'lighterPhotons' && photons >= (25 * difficulty) && electrons >= (25 * difficulty)) {
+        quarks -= (50 * difficulty);
+        increaseMult(photonMult, 1)
+        log("After tinkering with photons, you can now produce 2 per click!");
+    }
 }
-
-// multiplier functions
-
-function increaseTimeMult(mult) {
-    timeMult += mult;
-}
-
-function increaseQuarkMult(mult) {
-    quarkMult += mult;
-}
-
-function increasePhotonMult(mult) {
-    photonMult += mult
-}
-
-function increaseGluonMult(mult) {
-    gluonMult += mult
-}    
