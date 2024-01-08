@@ -28,7 +28,8 @@ function displayElementAsVariable(elementId, displayVariable) {
 //hide html element
 
 function hide(elementId) {
-      elementId.style.display = "none";
+    var elementVariable = document.getElementById(elementId);
+    elementVariable.style.display = "none";
   }
 
 //show html element
@@ -51,8 +52,8 @@ function increaseMult(mult, increaseAmount) {
 
 //change difficulty
 
-function difficulty(dif) {
-    var difficulty = dif;
+function difficultychange(dif) {
+    difficulty == dif;
 }
 
 //increment functions

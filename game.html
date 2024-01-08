@@ -1,4 +1,4 @@
-<!DOCTYpE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Idling Through Time</title>
@@ -14,7 +14,7 @@
             <div style="text-align: center;">
                 <a class="ib spaced" href="credits.html">Credits</a>
                 <a class="ib spaced" href="gameroadmap.html">Roadmap</a>
-                <p class="ib spaced">Version 0.021 - Nothing Works Edition</p>
+                <p class="ib spaced">Version 0.022</p>
             </div>
         </div>
         <div id="resources">
@@ -32,42 +32,42 @@
             <h2 class="ib resource" id="protoncounter">0</h2>
         </div>
         <div>
-            <button class="button" onclick="incrementTime(1)">Wait</button>
+            <button class="button" onclick="incrementTime(1);">Wait</button>
             <p class="ib"><i>Wait enough, and you'll get something in return! *Disclaimer: You may or may not get anything in return.*</i></p>
             <br>
-            <button class="button" onclick="incrementTime(5)">Wait More</button>
+            <button class="button" onclick="incrementTime(5);">Wait More</button>
             <p class="ib"><i>Like waiting, but longer.</i></p>
             <br>
-            <button class="button" onclick="incrementPhotons(1)">Light a Photon</button>
+            <button class="button" onclick="incrementPhotons(1);">Light a Photon</button>
             <p class="ib"><i>Light a photon into existence.</i></p>
             <br>
-            <button class="button" onclick="incrementQuarks(1)">Convert A Quark </button>
+            <button class="button" onclick="incrementQuarks(1);">Convert A Quark </button>
             <p class="ib"><i>Photons: Instant Quarks - Just add Energy!</i></p>
             <br>
-            <button class="button" onclick="incrementGluons(1)"> Condense a Gluon </button>
+            <button class="button" onclick="incrementGluons(1);"> Condense a Gluon </button>
             <p class="ib"><i>Condense a gluon out of sheer will.</i></p>
             <br>
-            <button class="button" onclick="incrementElectrons(1)">Spark an Electron</button>
+            <button class="button" onclick="incrementElectrons(1);">Spark an Electron</button>
             <p class="ib"><i>Turn nothing into yet another thing.</i></p>
             <br>
-            <button class="button" onclick="incrementProtons(1)">Fuse a proton</button>
+            <button class="button" onclick="incrementProtons(1);">Fuse a proton</button>
             <p class="ib"><i>Combine 3 quarks, 3 gluons, and a bit of love, and now you have the subatomic stew of a proton!</i></p>
             <br>
             </div>
         <div id="upgrades">
             <h2>Upgrades</h2>
             <p><i>Upgrade your universe here!</i></p><p style="font-size:8px; color:rgb(97, 101, 105);">How do you even upgrade a universe?</p>
-            <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation');hide();">Upgrade: Time Dilation </button>
-            <p><i>Time goes 10% faster, somehow. Costs 25 quarks.</i></p>
-            <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism');hide;">Upgrade: Electromagnetism</button>
-            <p><i>Unlock atoms. Costs 5 electrons and 5 protons.</i></p>
+            <button class="button" id="timeDilation" onclick="buyUpgrade('timeDilation');hide(timeDilation);hide(timeDilationText);">Upgrade: Time Dilation </button>
+            <p id="timeDilationText"><i>Time goes 10% faster, somehow. Costs 25 quarks.</i></p>
+            <button class="button" id="electroMagnetism" onclick="buyUpgrade('electroMagnetism');hide(electroMagnetism);hide(electroMagnetismText);">Upgrade: Electromagnetism</button>
+            <p id="electroMagnetismText"><i>Unlock atoms. Costs 5 electrons and 5 protons.</i></p>
         </div>
         <div>
             <h3>Temporary Settings Section</h3>
             <h4 class="ib">Cheat Mode & Hard Mode</h4><p class="ib">0 = Cheats, 1 = Normal, 2 = Hard Mode, Temporary</p>
-            <button onclick="difficulty(0);">0 (Cheats)</button>
-            <button onclick="difficulty(1);">1 (Normal)</button>
-            <button onclick="difficulty(2);">2 (Hard)</button>
+            <button onclick="difficultychange(0);">0 (Cheats)</button>
+            <button onclick="difficultychange(1);">1 (Normal)</button>
+            <button onclick="difficultychange(2);">2 (Hard)</button>
         </div>
         </body>
 </html>
