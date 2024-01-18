@@ -53,7 +53,8 @@ function increaseMult(mult, increaseAmount) {
 //change difficulty
 
 function difficultychange(dif) {
-    difficulty == dif;
+    difficulty = dif;
+    console.log('Difficulty set to ',difficulty,'.');
 }
 
 //increment functions
@@ -103,7 +104,7 @@ function incrementProtons(IncreaseNum) {
     }
 }
 
-//upgrade functions mult
+//upgrade functions
 
 function buyUpgrade(upgradeID) {
     if (upgradeID = 'timeDilation' && quarks >= (25 * difficulty)) {
@@ -116,6 +117,7 @@ function buyUpgrade(upgradeID) {
     if (upgradeID = 'electroMagnetism' && electrons >= (5 * difficulty) && protons >= (5 * difficulty)) {
         electrons -= (5 * difficulty);
         protons -= (5 * difficulty);
+        unlockAtoms();
         log("Particles now repel and attract. Maybe you can combine larger things with this?");
     }
 
@@ -130,4 +132,11 @@ function buyUpgrade(upgradeID) {
         increaseMult(photonMult, 1)
         log("After tinkering with photons, you can now produce 2 per click!");
     }
+}
+
+//unlock functions
+
+function unlockAtoms() {
+    show('hydrogen');
+    show('hydrogenText');
 }
